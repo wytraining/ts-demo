@@ -3,6 +3,11 @@
         <Menu mode="horizontal"
               theme="primary"
               :active-name="activeNav">
+            <MenuItem name="code"
+                      to="/main/code">
+                <Icon type="ios-map"/>
+                <span>menuDemo</span>
+            </MenuItem>
             <MenuItem name="editor"
                       to="/main/editor">
                 <Icon type="ios-map"/>

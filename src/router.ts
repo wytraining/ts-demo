@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import code from './router/code'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     routes: [
@@ -41,7 +42,8 @@ export default new Router({
                         name: 'editor'
                     },
                     component: () => import('./views/Editor.vue'),
-                }
+                },
+                ...code.routers,
             ]
         }
     ]

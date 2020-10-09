@@ -18,6 +18,18 @@ body {
         line-height: 50px;
         background: #247ad6;
         height: 100%;
+
+        .ivu-menu-item {
+            //background-color: red;
+            height: 100%;
+        }
+
+        .ivu-menu-item-active {
+            height: 100%;
+            background: #162954;
+            border-bottom: 3px solid rgba(#fff, 0.5);
+        }
+
     }
 }
 

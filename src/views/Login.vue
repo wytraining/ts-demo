@@ -165,8 +165,10 @@
                         method: "post",
                         data: qs.stringify({
                             username: this.loginForm.userName,
-                            // password: this.loginForm.password,
-                            password: Base64.encode(this.loginForm.password),
+                            //明文
+                            password: this.loginForm.password,
+                            //base64加密
+                            // password: Base64.encode(this.loginForm.password),
                             checkCode: this.loginForm.codeValue
                         }),
                         headers: {
@@ -179,7 +181,7 @@
                                     this.$route.query.redirect
                                 ));
                             } else {
-                                this.$router.push("/");
+                                this.$router.push("/main");
                             }
                         })
                         .catch(err => {

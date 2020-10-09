@@ -29,6 +29,7 @@ if (process.env.NODE_ENV === 'development') {
     axios.defaults.baseURL = "./api";
 } else {
     //生产环境 do something
+    axios.defaults.baseURL = "";
 }
 
 import scroll from 'vue-seamless-scroll'
