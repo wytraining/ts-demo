@@ -1,0 +1,78 @@
+//主题渐变色
+$theme-primary-gradient: linear-gradient(to right, #f25a20, #f1293f);
+
+$theme-hover-primary: #ef384b;  //表单激活颜色
+
+$theme-background:             #ffffff !default;  //默认背景色
+$theme-primary:                #ef384b !default;  //主色调
+$theme-box-bg:                 #f0f0f0;
+$theme-normal:                 #00c843; //正常
+$theme-warning:                #ef384b; //异常
+$theme-normal-bg:              #b4eec7; //正常背景色
+$theme-warning-bg:             #ffd1d5; //告警背景色
+
+//中性色(文本、边框、分割线)
+$theme-light-color:            #ffffff;             // 选中文字白色
+$theme-title-color:            #333333 !default;   //标题色
+$theme-text-primary:           #666666 !default;   //主色
+$theme-text-place:             #999999 !default;   //占位符文字
+$theme-border-color:           #dde4eb !default;  //表格分割线、边框
+$theme-li-bg:                  #f6f6f6;
+
+//字体大小
+$font-size-base:               16px !default;
+$font-size-small:              14px !default;
+$font-size-large:              18px !default;
+
+//表格
+$table-th-bg:                  #f5f5f5 !default; //表格背景色
+$table-bg-hover:               rgba(88, 183, 246, 0.15) !default; //表格鼠标经过
+
+
+//边框圆角
+$boder-radius-base:            3px !default;
+$boder-radius-small:           2px !default;
+$boder-radius-large:           4px !default;
+$box-shadow-normal:            0px 2px 6px 0px rgba(0, 0, 0, 0.16);
+$box-shadow-base:              0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+
+$delete-color:                 #ff001b;
+$detail-color:                 #3e72e9;
+
+
+@mixin theme-gradient($startColor: #f25a20, $endColor: #ec273c) {
+  background-image: linear-gradient(to right, $startColor, $endColor);
+}
+
+@mixin scrollbar-y($color: #C1C1C1, $trackColor: #ffffff) {
+  /*三角箭头的颜色*/
+  scrollbar-arrow-color: #b9bed1;
+  /*滚动条滑块按钮的颜色*/
+  scrollbar-face-color: #b9bed1;
+  /*滚动条整体颜色*/
+  scrollbar-highlight-color: #fff;
+  /*滚动条阴影*/
+  scrollbar-shadow-color: #fff;
+  /*滚动条轨道颜色*/
+  scrollbar-track-color: #fff;
+  /*滚动条整体部分,必须要设置*/
+  &::-webkit-scrollbar {   /*滚动条整体样式*/
+    width: 6px;         /*高宽分别对应横竖滚动条的尺寸*/
+    height: 5px;
+    background-color: #fff;
+  }
+  /*滚动条的轨道*/
+  &::-webkit-scrollbar-track {
+    background-color: $trackColor;
+  }
+  /*滚动条的滑块按钮*/
+  &::-webkit-scrollbar-thumb {   /*滚动条里面小方块*/
+    border-radius: 5px;
+    background-color: $color;
+  }
+  /*滚动条的上下两端的按钮*/
+  &::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+}

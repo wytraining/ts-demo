@@ -13,8 +13,7 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-* 含有authox模块，地图模块以及echarts的example。  
+```  
 * v-echart组件封装了echarts的原生事件可以直接@click来获取图标点击时间 
 同时鼠标事件参数有EchartMouseEvent这个类型描述
 事件参数中有一个chart字段是当前图标的Echarts实例

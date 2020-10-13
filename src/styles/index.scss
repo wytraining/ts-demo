@@ -1,3 +1,7 @@
+@import "common";
+@import "./variables.scss";
+@import "./modules/_index";
+
 html,
 body {
     height: 100%;

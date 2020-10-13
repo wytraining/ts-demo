@@ -1,0 +1,103 @@
+////表格
+//.ivu-table-wrapper {
+//  .ivu-table {
+//
+//    //表头
+//    .ivu-table-header th {
+//      font-size: 16px;
+//      color: #333;
+//      height: 52px;
+//      background-color: $table-th-bg;
+//      border-bottom: none;
+//    }
+//
+//    //表格内容
+//    .ivu-table-tbody {
+//
+//      td {
+//        height: 44px;
+//        color: #333;
+//        font-size: 14px;
+//        border-bottom: none;
+//      }
+//
+//      //隔行变色
+//      tr:nth-of-type(2n) td{
+//        background-color: $table-th-bg;
+//      }
+//
+//      //鼠标经过变色
+//      tr:hover {
+//        >td {
+//          background-color: $table-bg-hover;
+//        }
+//      }
+//
+//    }
+//
+//    //去掉最底部的下划线
+//    &::before {
+//      background-color: transparent;
+//    }
+//
+//  }
+//}
+//
+//
+
+
+//表格
+.ivu-table-wrapper {
+  height: 100%;
+  .ivu-table {
+    height: 100%;
+
+    //表头
+    .ivu-table-header th {
+      font-size: 16px;
+      color: #333;
+      height: 52px;
+      background-color: $table-th-bg;
+      border-bottom: none;
+    }
+
+    //表格内容
+    .ivu-table-body{
+      height: calc(100% - 52px); //减去表头的高度
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      .ivu-table-tbody {
+        td {
+          height: 44px;
+          color: #333;
+          font-size: 14px;
+          border-bottom: none;
+        }
+
+        //隔行变色
+        tr:nth-of-type(2n) td{
+          background-color: $table-th-bg;
+        }
+
+        //鼠标经过变色
+        tr:hover {
+          >td {
+            background-color: $table-bg-hover;
+          }
+        }
+
+      }
+
+    }
+
+    //去掉最底部的下划线
+    &::before {
+      background-color: transparent;
+    }
+
+  }
+}
+
+
+

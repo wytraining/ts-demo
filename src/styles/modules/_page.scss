@@ -1,0 +1,35 @@
+//分页
+.ivu-page {
+  float: right;
+  height: 70px;
+  line-height: 70px;
+
+  //总条数
+  .ivu-page-total {
+    color: #333;
+  }
+
+  //边框
+  .ivu-page-item,
+  .ivu-page-prev,
+  .ivu-page-next {
+    border-radius: 0;
+  }
+
+  //选中样式
+  .ivu-page-item-active {
+    background-color: #57a3f3;
+    border-color: #57a3f3;
+    a {
+      color: #fff;
+    }
+
+    &:hover {
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+
+}

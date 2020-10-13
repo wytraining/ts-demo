@@ -1,0 +1,19 @@
+//滚动条样式
+::-webkit-scrollbar {
+  //凹槽
+  width: 9px;
+  height: 9px;
+  background: #f8f8f8;
+}
+
+::-webkit-scrollbar-thumb {
+  //滑块
+  background: #ddd;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  //滑块：hover
+  background: #bbb;
+  cursor: pointer;
+}

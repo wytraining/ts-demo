@@ -58,6 +58,7 @@
 
         .main {
             width: calc(100% - 200px);
+            height: 100%;
             float: right;
         }
     }

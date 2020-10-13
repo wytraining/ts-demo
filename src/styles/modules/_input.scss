@@ -1,0 +1,24 @@
+//输入框
+.ivu-input-wrapper {
+  .ivu-input {
+    border-radius: 0;
+    border: solid 1px #e8e8e8;
+    color: #333;
+    font-size: 14px;
+
+    &:hover,
+    &:focus {
+      border-color: #57a3f3;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: #999999;
+    }
+
+
+  }
+}
