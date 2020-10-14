@@ -43,6 +43,13 @@ export default new Router({
                     },
                     component: () => import('./views/Editor.vue'),
                 },
+                {
+                    path: 'map',
+                    meta: {
+                        name: 'map'
+                    },
+                    component: () => import('./views/Map.vue'),
+                },
                 ...code.routers,
             ]
         }

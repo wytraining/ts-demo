@@ -3,10 +3,15 @@
         <Menu mode="horizontal"
               theme="primary"
               :active-name="activeNav">
+            <MenuItem name="map"
+                      to="/main/map">
+                <Icon type="ios-map"/>
+                <span>mapDemo</span>
+            </MenuItem>
             <MenuItem name="code"
                       to="/main/code">
                 <Icon type="ios-map"/>
-                <span>menuDemo</span>
+                <span>codeDemo</span>
             </MenuItem>
             <MenuItem name="editor"
                       to="/main/editor">
