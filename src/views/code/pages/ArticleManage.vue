@@ -8,11 +8,17 @@
                 <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
 
+            <DatePicker type="date" placeholder="请选择"></DatePicker>
+
             <Button type="primary">搜索</Button>
 
         </div>
         <div class="tableList">
-            <Table stripe :columns="columns1" :data="data1"></Table>
+            <Table stripe :columns="columns1" :data="data1">
+                <template slot-scope="{row, index}" slot="action">
+                    <span @click="deleteModal=true">删除</span>
+                </template>
+            </Table>
             <Page
                     show-elevator
                     show-total
@@ -22,16 +28,30 @@
                     :page-list="page.pageList"
                     @on-change="changePage"/>
         </div>
+
+
+
+        <Modal v-model="deleteModal" title="删除数据" @on-ok="confirmDeletaModal" @on-cancel="cancelDeletaModal" :mask-closable="false">
+            <!--<p>确认删除数据？</p>-->
+            <delete-modal></delete-modal>
+        </Modal>
+
+
     </div>
 </template>
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
+    import DeleteModal from './components/DeleteModal.vue'
 
     @Component({
-        components: {}
+        components: {
+            DeleteModal
+        }
     })
     export default class Template extends Vue {
+
+        deleteModal: boolean = false; //删除弹窗
 
         //分页器
         page: any = {
@@ -78,74 +98,14 @@
             {
                 title: 'Address',
                 key: 'address'
+            },
+            {
+                title: '操作',
+                slot: 'action',
+                align: 'right'
             }
         ];
         data1: Array<any> = [
-
-            {
-                name: 'Jon Snow',
-                age: 26,
-                address: 'Ottawa No. 2 Lake Park',
-                date: '2016-10-04'
-            }, {
-                name: 'Joe Black',
-                age: 30,
-                address: 'Sydney No. 1 Lake Park',
-                date: '2016-10-02'
-            },
-            {
-                name: 'Jon Snow',
-                age: 26,
-                address: 'Ottawa No. 2 Lake Park',
-                date: '2016-10-04'
-            },
-            {
-                name: 'Jim Green',
-                age: 24,
-                address: 'London No. 1 Lake Park',
-                date: '2016-10-01'
-            },
-            {
-                name: 'Joe Black',
-                age: 30,
-                address: 'Sydney No. 1 Lake Park',
-                date: '2016-10-02'
-            },
-            {
-                name: 'Jon Snow',
-                age: 26,
-                address: 'Ottawa No. 2 Lake Park',
-                date: '2016-10-04'
-            }, {
-                name: 'John Brown',
-                age: 18,
-                address: 'New York No. 1 Lake Park',
-                date: '2016-10-03'
-            },
-            {
-                name: 'Jim Green',
-                age: 24,
-                address: 'London No. 1 Lake Park',
-                date: '2016-10-01'
-            },
-            {
-                name: 'Joe Black',
-                age: 30,
-                address: 'Sydney No. 1 Lake Park',
-                date: '2016-10-02'
-            },
-            {
-                name: 'Jon Snow',
-                age: 26,
-                address: 'Ottawa No. 2 Lake Park',
-                date: '2016-10-04'
-            },
-            {
-                name: 'John Brown',
-                age: 18,
-                address: 'New York No. 1 Lake Park',
-                date: '2016-10-03'
-            },
             {
                 name: 'Jim Green',
                 age: 24,
@@ -193,7 +153,7 @@
                 address: 'Sydney No. 1 Lake Park',
                 date: '2016-10-02'
             },
-        ]
+        ];
 
 
         //切换页码
@@ -202,11 +162,22 @@
             // this.getTableList(currPage);
         }
 
+        //确认
+        confirmDeletaModal() {
+            console.log("ok");
+        }
+
+        //取消
+        cancelDeletaModal() {
+            console.log("cancelModal");
+        }
+
 
     }
 </script>
 
 <style lang="scss" scoped>
+    @import "../../../styles/variables.scss";
     .article-manage {
         padding: 16px;
         height: 100%;
@@ -215,6 +186,7 @@
             font-size: 16px;
             height: 40px;
             line-height: 40px;
+            color: $delete-color;
         }
 
         .filter {
