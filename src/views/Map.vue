@@ -17,6 +17,7 @@
         map: any = {}; //底图
         marker: any = {}; //单点位
         cluster: any = {}; //聚集点位
+        infoWindow: any = {}; //弹窗
 
         pointList: Array<any> = []; //点位数组
 
@@ -32,7 +33,7 @@
                 resizeEnable: true, //是否监控地图容器尺寸变化
                 zoom: 8, //初始化地图层级
                 center: [116.397428, 39.90923], //初始化地图中心点
-
+                // mapStyle: "amap://styles/c72a556f21968187491edf8de3b2dbe0", //底图样式
             });
         }
 
@@ -44,6 +45,16 @@
                 offset: new AMap.Pixel(-13, -30)
             });
             this.marker.setMap(this.map);
+
+            //弹窗内容
+            this.marker.content = {
+                id: '001',
+                color: 'red',
+                name: '点位1',
+                lng: '116.406315',
+                lat: '39.908775'
+            };
+            this.marker.on('click', this.addInfoWindow);//打开弹窗
         }
 
         //聚集点位
@@ -51,7 +62,7 @@
             const vm = this;
             let marker = new AMap.Marker({
                 icon: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png",
-                position: [116.406315, 39.908775],
+                position: [116.906315, 39.908775],
                 offset: new AMap.Pixel(-13, -30)
             });
             let marker2 = new AMap.Marker({
@@ -79,6 +90,28 @@
                     {maxZoom: 14} /*{styles:sts}*/
                 );
             })
+        }
+
+        //弹窗
+        addInfoWindow(e: any) {
+            console.log(e);
+            //构建信息窗体中显示的内容
+            var info = [];
+            info.push("<div class='input-card content-window-card'><div><img style=\"float:left;\" src=\" https://webapi.amap.com/images/autonavi.png \"/></div> ");
+            info.push("<div style=\"padding:7px 0px 0px 0px;\"><h4>高德软件</h4>");
+            info.push("<p class='input-item'>电话 : 010-84107000   邮编 : 100102</p>");
+            info.push("<p class='input-item'>地址 :北京市朝阳区望京阜荣街10号首开广场4层</p></div></div>");
+            info.push("<p style=\"color: red\">color："+ e.target.content.color+"</p>");
+            info.push("name：" + e.target.content.name);
+
+            this.infoWindow = new AMap.InfoWindow({
+                content: info.join(""),  //使用默认信息窗体框样式，显示信息内容
+                offset: new AMap.Pixel(5, -15)
+            });
+
+            // this.infoWindow.setContent(e.target.content);
+            // this.infoWindow.open(this.map, this.map.getCenter()); //中心经纬度
+            this.infoWindow.open(this.map, [e.lnglat.lng,e.lnglat.lat]); //点位经纬度
         }
 
 
