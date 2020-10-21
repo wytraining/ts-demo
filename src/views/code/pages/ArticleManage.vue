@@ -14,7 +14,7 @@
 
         </div>
         <div class="tableList">
-            <Table stripe :columns="columns1" :data="data1">
+            <Table stripe :columns="columns1" :data="tableList" :loading="loading">
                 <template slot-scope="{row, index}" slot="action">
                     <span @click="deleteModal=true">删除</span>
                 </template>
@@ -28,8 +28,6 @@
                     :page-list="page.pageList"
                     @on-change="changePage"/>
         </div>
-
-
 
         <Modal v-model="deleteModal" title="删除数据" @on-ok="confirmDeletaModal" @on-cancel="cancelDeletaModal" :mask-closable="false">
             <!--<p>确认删除数据？</p>-->
@@ -53,6 +51,7 @@
 
         deleteModal: boolean = false; //删除弹窗
 
+        loading: boolean = false;
         //分页器
         page: any = {
             total: 20, //总共条数
@@ -105,42 +104,7 @@
                 align: 'right'
             }
         ];
-        data1: Array<any> = [
-            {
-                name: 'Jim Green',
-                age: 24,
-                address: 'London No. 1 Lake Park',
-                date: '2016-10-01'
-            },
-            {
-                name: 'Joe Black',
-                age: 30,
-                address: 'Sydney No. 1 Lake Park',
-                date: '2016-10-02'
-            },
-            {
-                name: 'Jon Snow',
-                age: 26,
-                address: 'Ottawa No. 2 Lake Park',
-                date: '2016-10-04'
-            },
-            {
-                name: 'Jon Snow',
-                age: 26,
-                address: 'Ottawa No. 2 Lake Park',
-                date: '2016-10-04'
-            }, {
-                name: 'Joe Black',
-                age: 30,
-                address: 'Sydney No. 1 Lake Park',
-                date: '2016-10-02'
-            },
-            {
-                name: 'Jon Snow',
-                age: 26,
-                address: 'Ottawa No. 2 Lake Park',
-                date: '2016-10-04'
-            },
+        tableList: Array<any> = [
             {
                 name: 'Jim Green',
                 age: 24,
@@ -155,6 +119,20 @@
             },
         ];
 
+        getTableList() {
+            this.loading = true;
+            let params = {
+                currentPage: this.page.current,
+                pageSize: this.page.pageSize,
+            };
+            this.$http.get("dljkss/findComOnlineMonthRate", {params: params}).then(res => {
+                this.tableList = res.data.result;
+                //修改分页器信息
+                this.page.total = res.data.totalcount; //总条数
+                this.page.current = res.data.pageindex; //当前页
+                this.loading = false;
+            })
+        }
 
         //切换页码
         changePage(currPage: any) {
