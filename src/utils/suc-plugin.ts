@@ -107,6 +107,18 @@ export default {
         //返回地图对象
         Vue.prototype.$getMapConfig = function (common?: any) {
             return new Map(common);
-        }
+        };
+
+        //自定义指令
+        Vue.directive('pin', {
+            //@ts-ignore
+            bind: function (el, binding, vnode) {
+                console.log(binding);
+                el.style.position = 'fixed';
+                el.style.top = binding.value.top + 'px';
+                el.style.color = binding.value.color;
+            }
+        })
+
     }
 }

@@ -4,6 +4,7 @@
         <p>原始数量：{{testNumber}}</p>
         <p>原始数量2：{{testNumber2}}</p>
         <Button @click="changeTestNumber">修改数量1</Button>
+        <p v-pin="{top:'200', color: 'red'}">自定义指令</p>
     </div>
 </template>
 
