@@ -24,6 +24,13 @@ export default {
                         name: 'commentsManage'
                     },
                     component: () => import('@/views/code/pages/CommentsManage.vue'),
+                },
+                {
+                    path: 'rule',
+                    meta: {
+                        name: 'rule'
+                    },
+                    component: () => import('@/views/code/pages/Rule.vue'),
                 }
             ]
         }

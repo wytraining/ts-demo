@@ -1,6 +1,5 @@
 //主题渐变色
 $theme-primary-gradient: linear-gradient(to right, #f25a20, #f1293f);
-
 $theme-hover-primary: #ef384b;  //表单激活颜色
 
 $theme-background:             #ffffff !default;  //默认背景色
@@ -10,6 +9,11 @@ $theme-normal:                 #00c843; //正常
 $theme-warning:                #ef384b; //异常
 $theme-normal-bg:              #b4eec7; //正常背景色
 $theme-warning-bg:             #ffd1d5; //告警背景色
+
+$theme-primary-dark:           #071924;
+$theme-text-active:            #ffad2c;  //选中状态文字颜色
+$theme-text-link:              #02e4fe;  //链接、操作、强调文字
+
 
 //中性色(文本、边框、分割线)
 $theme-light-color:            #ffffff;             // 选中文字白色

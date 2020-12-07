@@ -4,16 +4,15 @@
         <Menu class="side-menu-container" :active-name="activeNav" :open-names="['1']">
             <Submenu name="1">
                 <template slot="title">
-                    <Icon type="ios-paper"/>
-                    内容管理
+                    <Icon type="ios-paper"/>内容管理
                 </template>
-                <MenuItem name="articleManage" to="/main/code/articleManage">文章管理</MenuItem>
-                <MenuItem name="commentsManage" to="/main/code/commentsManage">评论管理</MenuItem>
+                <MenuItem name="articleManage" to="/main/code/articleManage">列表</MenuItem>
+                <MenuItem name="commentsManage" to="/main/code/commentsManage">vuex/自定义指令</MenuItem>
+                <MenuItem name="rule" to="/main/code/rule">权重</MenuItem>
             </Submenu>
             <Submenu name="2">
                 <template slot="title">
-                    <Icon type="ios-people"/>
-                    用户管理
+                    <Icon type="ios-people"/>用户管理
                 </template>
                 <MenuItem name="2-1">新增用户</MenuItem>
                 <MenuItem name="2-2">活跃用户</MenuItem>
