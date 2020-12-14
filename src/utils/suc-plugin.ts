@@ -118,7 +118,48 @@ export default {
                 el.style.top = binding.value.top + 'px';
                 el.style.color = binding.value.color;
             }
-        })
+        });
+
+        //防止重复点击(防抖)
+        Vue.directive('debounce', {
+            bind: function (el: any, binding: any) {
+                let timer: any;
+                const trigger = binding.value.trigger || 'click'; // 触发方式
+                const timeout = binding.value.timeout || 5000; // 触发周期
+                const event = binding.value.event; // 触发事件
+                el.addEventListener(trigger, () => {
+                    if (timer) {
+                        clearTimeout(timer)
+                    }
+                    timer = setTimeout(() => {
+                        event()
+                    }, timeout)
+                })
+            }
+        });
+
+        //防止重复点击(按钮灰掉)
+        Vue.directive('preventReClick', {
+            inserted(el: any, binding: any) {
+                el.addEventListener('click', () => {
+                    console.log(binding);
+                    if (!el.disabled) {
+                        el.disabled = true;
+                        el.style.cursor = 'not-allowed';
+                        el.style.pointerEvents = 'none';
+                        setTimeout(() => {
+                            el.disabled = false;
+                            el.style.cursor = 'pointer';
+                            el.style.pointerEvents = ''
+                        }, binding.value || 3000)
+                    }
+                })
+            }
+        });
+
+
+
+
 
     }
 }
