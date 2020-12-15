@@ -31,6 +31,13 @@ export default {
                         name: 'rule'
                     },
                     component: () => import('@/views/code/pages/Rule.vue'),
+                },
+                {
+                    path: 'drag',
+                    meta: {
+                        name: 'drag'
+                    },
+                    component: () => import('@/views/code/pages/Drag.vue'),
                 }
             ]
         }

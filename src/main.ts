@@ -24,6 +24,10 @@ import ViewUI from "view-design"
 import 'view-design/dist/styles/iview.css'
 Vue.use(ViewUI);
 
+//拖拽
+import VueDND from 'awe-dnd'
+Vue.use(VueDND);
+
 if (process.env.NODE_ENV === 'development') {
     //开发环境 do something
     axios.defaults.baseURL = "./api";
