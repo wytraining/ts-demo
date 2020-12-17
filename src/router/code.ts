@@ -38,6 +38,13 @@ export default {
                         name: 'drag'
                     },
                     component: () => import('@/views/code/pages/Drag.vue'),
+                },
+                {
+                    path: 'promise',
+                    meta: {
+                        name: 'promise'
+                    },
+                    component: () => import('@/views/code/pages/Promise.vue'),
                 }
             ]
         }

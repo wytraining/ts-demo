@@ -10,6 +10,7 @@
                 <MenuItem name="commentsManage" to="/main/code/commentsManage">vuex/自定义指令</MenuItem>
                 <MenuItem name="rule" to="/main/code/rule">权重</MenuItem>
                 <MenuItem name="drag" to="/main/code/drag">拖拽</MenuItem>
+                <MenuItem name="promise" to="/main/code/promise">promise</MenuItem>
             </Submenu>
             <Submenu name="2">
                 <template slot="title">
