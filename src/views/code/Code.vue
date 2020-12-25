@@ -11,6 +11,7 @@
                 <MenuItem name="rule" to="/main/code/rule">权重</MenuItem>
                 <MenuItem name="drag" to="/main/code/drag">拖拽</MenuItem>
                 <MenuItem name="promise" to="/main/code/promise">promise</MenuItem>
+                <MenuItem name="language" to="/main/code/language">language</MenuItem>
             </Submenu>
             <Submenu name="2">
                 <template slot="title">

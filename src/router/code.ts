@@ -45,6 +45,13 @@ export default {
                         name: 'promise'
                     },
                     component: () => import('@/views/code/pages/Promise.vue'),
+                },
+                {
+                    path: 'language',
+                    meta: {
+                        name: 'language'
+                    },
+                    component: () => import('@/views/code/pages/Language.vue'),
                 }
             ]
         }

@@ -3,6 +3,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './stores'
+import i18n from './lang'
 
 import { quillEditor } from 'vue-quill-editor' // 调用富文本编辑器
 import 'quill/dist/quill.snow.css' // 富文本编辑器外部引用样式  三种样式三选一引入即可
@@ -84,6 +85,7 @@ router.afterEach(route => {
 });
 
 new Vue({
+    i18n,
     router,
     store,
     render: h => h(App)
