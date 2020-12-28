@@ -52,6 +52,22 @@ export default {
                         name: 'language'
                     },
                     component: () => import('@/views/code/pages/Language.vue'),
+                },
+                {
+                    path: 'routerJupm',
+                    meta: {
+                        name: 'routerJupm'
+                    },
+                    component: () => import('@/views/code/pages/RouterJupm.vue')
+                },
+                {
+                    // path: 'detail',
+                    path: 'detail/:id/:name', //刷新不消失params参数
+                    name: 'detail',
+                    meta: {
+                        name: 'detail'
+                    },
+                    component: () => import('@/views/code/pages/routerJupm/RouterDetail.vue')
                 }
             ]
         }
