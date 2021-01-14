@@ -1,6 +1,10 @@
 <template>
     <div class="router-jump">
-        <Button @click="goDetail">跳转</Button>
+        <p><Button @click="goDetail">跳转</Button></p>
+
+<!--        <img src="../../../assets/test/logo.png" alt="">-->
+        <img src="../../../assets/codeManage/test.gif" alt="">
+
         <router-view></router-view>
     </div>
 </template>
@@ -27,5 +31,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+    .router-jump {
+        padding: 20px;
+    }
 </style>
