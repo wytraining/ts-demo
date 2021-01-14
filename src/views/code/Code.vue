@@ -13,6 +13,7 @@
                 <MenuItem name="promise" to="/main/code/promise">promise</MenuItem>
                 <MenuItem name="language" to="/main/code/language">language</MenuItem>
                 <MenuItem name="routerJupm" to="/main/code/routerJupm">路由跳转</MenuItem>
+                <MenuItem name="exportWord" to="/main/code/exportWord">导出word</MenuItem>
             </Submenu>
             <Submenu name="2">
                 <template slot="title">

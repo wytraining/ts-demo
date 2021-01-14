@@ -68,7 +68,14 @@ export default {
                         name: 'detail'
                     },
                     component: () => import('@/views/code/pages/routerJupm/RouterDetail.vue')
-                }
+                },
+                {
+                    path: 'exportWord',
+                    meta: {
+                        name: 'exportWord'
+                    },
+                    component: () => import('@/views/code/pages/ExportWord.vue')
+                },
             ]
         }
     ]
