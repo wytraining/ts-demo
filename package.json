@@ -10,6 +10,7 @@
     "@types/echarts": "^4.1.10",
     "awe-dnd": "^0.3.4",
     "core-js": "^2.6.5",
+    "dayjs": "^1.10.3",
     "echarts": "^4.2.1",
     "echarts-liquidfill": "^2.0.5",
     "element-ui": "^2.14.1",

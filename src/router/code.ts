@@ -19,6 +19,13 @@ export default {
                     component: () => import('@/views/code/pages/ArticleManage.vue'),
                 },
                 {
+                    path: 'articleManage2',
+                    meta: {
+                        name: 'articleManage2'
+                    },
+                    component: () => import('@/views/code/pages/ArticleManage2/ArticleManage2.vue'),
+                },
+                {
                     path: 'commentsManage',
                     meta: {
                         name: 'commentsManage'

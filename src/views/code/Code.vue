@@ -7,6 +7,7 @@
                     <Icon type="ios-paper"/>内容管理
                 </template>
                 <MenuItem name="articleManage" to="/main/code/articleManage">列表</MenuItem>
+                <MenuItem name="articleManage2" to="/main/code/articleManage2">列表(ts规范)</MenuItem>
                 <MenuItem name="commentsManage" to="/main/code/commentsManage">vuex/自定义指令</MenuItem>
                 <MenuItem name="rule" to="/main/code/rule">权重</MenuItem>
                 <MenuItem name="drag" to="/main/code/drag">拖拽</MenuItem>

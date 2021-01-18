@@ -25,8 +25,8 @@ module.exports = {
     devServer: {
         proxy: {
             "/api/": {
-                // target: "http://localhost:8098",
-                target: "http://172.18.61.192:8098",
+                // target: "http://172.18.61.192:8098",
+                target: "http://218.108.6.126:8888", //线上
                 changeOrigin: true,
                 pathRewrite: {
                     "^/api": ""
