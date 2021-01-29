@@ -27,7 +27,7 @@ export default new Router({
                     meta: {
                         name: 'echarts'
                     },
-                    component: () => import('./views/Echarts.vue'),
+                    component: () => import('./views/echarts/Echarts.vue'),
                 },
                 {
                     path: 'scroll',
