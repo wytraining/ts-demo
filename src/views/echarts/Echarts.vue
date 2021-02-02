@@ -2,8 +2,7 @@
     <div class="echarts">
 
         <!--单个echarts-->
-        <!--<v-chart :options="barOptions" :autoResize="true" @click="handlerClick"></v-chart>
-        <v-chart :options="liquidFill" :autoResize="true" @click="handlerClick"></v-chart>-->
+        <v-chart :options="barOptions" :autoResize="true" @click="handlerClick"></v-chart>
 
         <!--循环列表-->
         <v-chart :options="item"
@@ -17,17 +16,19 @@
 </template>
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
-    import {barOptions, liquidFill} from './data'
+    import {barOptions} from './data/bar'
+    import {liquidFill} from './data/liquidFill'
+    import {pieOptions} from './data/pie'
+    import {pieOptions2} from './data/pie2'
 
     @Component
     export default class echarts extends Vue {
 
         // 单个echarts
         barOptions = barOptions; // 柱状图
-        liquidFill = liquidFill; // 水球图
 
         // 循环列表
-        optionList: Array<any> = [barOptions, liquidFill];
+        optionList: Array<any> = [barOptions, liquidFill, pieOptions, pieOptions2];
 
         handlerClick(params: EchartMouseEvent) {
             console.log(params)
