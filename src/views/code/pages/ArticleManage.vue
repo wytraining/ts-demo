@@ -92,7 +92,18 @@
             {
                 title: 'Age',
                 key: 'age',
-                width: 200
+                width: 200,
+                align: 'center',
+                renderHeader: (h: any, params: any) => {
+                    return h('span', [
+                        h('Button',{
+                            class: 'ageBtn'
+                        },'age'),
+                        h('Button',{
+                            class: 'ageBtn'
+                        },'test'),
+                    ])
+                }
             },
             {
                 title: 'Address',
@@ -156,7 +167,7 @@
 
 <style lang="scss" scoped>
     @import "../../../styles/variables.scss";
-    .article-manage {
+    ::v-deep.article-manage {
         padding: 16px;
         height: 100%;
 
@@ -177,7 +188,6 @@
             }
         }
 
-
         .tableList {
             height: calc(100% - 180px);
             /*.ivu-table-wrapper {
@@ -191,6 +201,11 @@
                     }
                 }
             }*/
+        }
+
+        .ageBtn {
+            background: #57a3f3;
+            color: #fff;
         }
 
 
