@@ -1,8 +1,8 @@
 <template>
     <div class="router-jump">
         <p><Button @click="goDetail">跳转</Button></p>
+        <p><Button @click="print">print</Button></p>
 
-<!--        <img src="../../../assets/test/logo.png" alt="">-->
         <img src="../../../assets/codeManage/test.gif" alt="">
 
         <router-view></router-view>
@@ -25,6 +25,10 @@
                     name: 'zs'
                 }
             })
+        }
+
+        print() {
+            this.$print('test全局函数print');
         }
 
     }

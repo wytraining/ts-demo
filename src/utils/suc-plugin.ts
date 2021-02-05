@@ -58,7 +58,11 @@ const utils = {
         }
         return result;
     }
-}
+};
+
+export const print = function (params: string|number) {
+    console.log(params);
+};
 
 //地图类
 class Map {
@@ -103,6 +107,9 @@ export default {
 
         //将方法集添加到Vue实例上面去
         Vue.prototype.$utils = utils;
+
+        //打印
+        Vue.prototype.$print = print;
 
         //返回地图对象
         Vue.prototype.$getMapConfig = function (common?: any) {

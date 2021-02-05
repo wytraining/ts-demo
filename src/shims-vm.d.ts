@@ -12,6 +12,7 @@ declare module 'vue/types/vue' {
     interface Vue {
         $http: AxiosStatic,
         $getMapConfig: Function,
-        $utils: utils
+        $utils: utils,
+        $print: Function
     }
 }
