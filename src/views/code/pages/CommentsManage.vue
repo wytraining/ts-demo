@@ -5,7 +5,7 @@
         <p>原始数量2：{{testNumber2}}</p>
         <Button @click="changeTestNumber">修改数量1</Button>
         <Button v-debounce="{event: testDebounce, timeout: 1000}">防止重复点击(防抖)</Button>
-        <Button @click="testDebounce" v-preventReClick="1000" >防止重复点击(按钮灰掉)</Button>
+        <Button @click="testDebounce" v-preventReClick="1000" >防止重复点击(节流：按钮灰掉)</Button>
         <p v-pin="{top:'200', color: 'red'}">自定义指令</p>
 
         <Input type="text" v-model="name" placeholder="防抖测试"

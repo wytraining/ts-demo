@@ -127,7 +127,7 @@ export default {
             }
         });
 
-        //防止重复点击(防抖)
+        //防止重复点击(防抖：只触发最后一次)
         Vue.directive('debounce', {
             bind: function (el: any, binding: any) {
                 let timer: any;
@@ -145,14 +145,14 @@ export default {
             }
         });
 
-        //防止重复点击(按钮灰掉)
+        //防止重复点击(节流：执行一次后，到规定时候再次触发)
         Vue.directive('preventReClick', {
             inserted(el: any, binding: any) {
                 el.addEventListener('click', () => {
                     console.log(binding);
                     if (!el.disabled) {
                         el.disabled = true;
-                        el.style.cursor = 'not-allowed';
+                        el.style.cursor = 'not-allowed';//按钮灰掉，不许再次点击
                         el.style.pointerEvents = 'none';
                         setTimeout(() => {
                             el.disabled = false;
