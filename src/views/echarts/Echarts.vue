@@ -20,6 +20,7 @@
     import {liquidFill} from './data/liquidFill'
     import {pieOptions} from './data/pie'
     import {pieOptions2} from './data/pie2'
+    import {doubleBarOptions} from './data/doubleBar'
 
     @Component
     export default class echarts extends Vue {
@@ -28,7 +29,7 @@
         barOptions = barOptions; // 柱状图
 
         // 循环列表
-        optionList: Array<any> = [barOptions, liquidFill, pieOptions, pieOptions2];
+        optionList: Array<any> = [barOptions, liquidFill, pieOptions, pieOptions2, doubleBarOptions];
 
         handlerClick(params: EchartMouseEvent) {
             console.log(params)
