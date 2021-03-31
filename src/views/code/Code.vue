@@ -18,9 +18,9 @@
             </Submenu>
             <Submenu name="2">
                 <template slot="title">
-                    <Icon type="ios-people"/>用户管理
+                    <Icon type="ios-people"/>vue
                 </template>
-                <MenuItem name="2-1">新增用户</MenuItem>
+                <MenuItem name="busDemo" to="/main/code/busDemo">组件通信（bus）</MenuItem>
                 <MenuItem name="2-2">活跃用户</MenuItem>
             </Submenu>
         </Menu>

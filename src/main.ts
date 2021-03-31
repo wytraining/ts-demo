@@ -45,6 +45,7 @@ import scroll from 'vue-seamless-scroll'
 Vue.use(scroll);
 
 Vue.prototype.$http = axios;
+Vue.prototype.$Bus = new Vue();
 
 Vue.config.productionTip = false;
 

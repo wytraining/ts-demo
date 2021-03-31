@@ -13,6 +13,7 @@ declare module 'vue/types/vue' {
         $http: AxiosStatic,
         $getMapConfig: Function,
         $utils: utils,
-        $print: Function
+        $print: Function,
+        $Bus: any
     }
 }

@@ -83,6 +83,21 @@ export default {
                     },
                     component: () => import('@/views/code/pages/ExportWord.vue')
                 },
+
+
+                /***
+                 * vue
+                 */
+                {
+                    path: 'busDemo',
+                    meta: {
+                        name: 'busDemo'
+                    },
+                    component: () => import('@/views/code/vuePages/Bus/BusDemo.vue')
+                },
+
+
+
             ]
         }
     ]
