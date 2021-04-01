@@ -6,7 +6,10 @@
         <p>子组件：</p>
         <son1></son1>
         <son2></son2>
-        <son3></son3>
+        <son3 :name="name">
+            <p slot="header">我是header</p>
+            <p slot="footer">我是footer</p>
+        </son3>
     </div>
 </template>
 
@@ -19,6 +22,7 @@
     })
     export default class Template extends Vue {
 
+        name: string = "我是父组件"
         name1: string = "";
         name2: string = "";
 
