@@ -83,6 +83,13 @@ export default {
                     },
                     component: () => import('@/views/code/pages/ExportWord.vue')
                 },
+                {
+                    path: 'classDemo',
+                    meta: {
+                        name: 'classDemo'
+                    },
+                    component: () => import('@/views/code/pages/classDemo/ClassDemo.vue')
+                },
 
 
                 /***
