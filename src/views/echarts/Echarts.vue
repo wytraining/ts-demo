@@ -12,6 +12,9 @@
                  @click="handlerClick">
         </v-chart>
 
+        <!--3d饼图-->
+        <high-chart-pie/>
+
     </div>
 </template>
 <script lang="ts">
@@ -22,14 +25,28 @@
     import {pieOptions2} from './data/pie2'
     import {doubleBarOptions} from './data/doubleBar'
 
-    @Component
+    // highchart
+    import HighChartPie from './data/HighChartPie.vue'
+
+
+    @Component({
+        components: {
+            HighChartPie
+        }
+    })
     export default class echarts extends Vue {
 
         // 单个echarts
         barOptions = barOptions; // 柱状图
 
         // 循环列表
-        optionList: Array<any> = [barOptions, liquidFill, pieOptions, pieOptions2, doubleBarOptions];
+        optionList: Array<any> = [
+            barOptions,
+            liquidFill,
+            pieOptions,
+            pieOptions2,
+            doubleBarOptions
+        ];
 
         handlerClick(params: EchartMouseEvent) {
             console.log(params)
