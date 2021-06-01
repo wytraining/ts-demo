@@ -167,6 +167,11 @@
             // this.$http.get("https://www.fastmock.site/mock/bcf4a1b0eda8059aaab99794676b49e9/epcode/api/getCompanyList").then(res=>{
             this.$http.get("epcode/api/getCompanyList").then(res=>{
                 console.log(res);
+            });
+
+            // mock2
+            this.$http2.get("epcode2/api2/getCompanyList2").then(res=>{
+                console.log(res);
             })
         }
 

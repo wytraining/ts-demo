@@ -26,13 +26,20 @@ module.exports = {
         proxy: {
             "/api/": {
                 // target: "http://172.18.61.192:8098",
-                target: "http://218.108.6.126:8888", //线上
-                // target: "https://www.fastmock.site/mock/bcf4a1b0eda8059aaab99794676b49e9", //mock
+                // target: "http://218.108.6.126:8888", //线上
+                target: "https://www.fastmock.site/mock/bcf4a1b0eda8059aaab99794676b49e9", //mock
                 changeOrigin: true,
                 pathRewrite: {
                     "^/api": ""
                 }
-            }
+            },
+            "/api2/": {
+                target: "https://www.fastmock.site/mock/a081f9a40cf35cc3b876cf8705dfc249", // mock2
+                changeOrigin: true,
+                pathRewrite: {
+                    "^/api2": ""
+                }
+            },
         }
     },
     configureWebpack: {

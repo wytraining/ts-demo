@@ -33,18 +33,30 @@ Vue.use(ViewUI);
 import VueDND from 'awe-dnd'
 Vue.use(VueDND);
 
-if (process.env.NODE_ENV === 'development') {
-    //开发环境 do something
-    axios.defaults.baseURL = "./api";
-} else {
-    //生产环境 do something
-    axios.defaults.baseURL = "";
-}
+
+
+
+// if (process.env.NODE_ENV === 'development') {
+//     //开发环境 do something
+//     axios.defaults.baseURL = "./api";
+// } else {
+//     //生产环境 do something
+//     axios.defaults.baseURL = "";
+// }
 
 import scroll from 'vue-seamless-scroll'
 Vue.use(scroll);
 
-Vue.prototype.$http = axios;
+const http = axios.create({
+    baseURL: "./api"
+});
+
+const http2 = axios.create({
+    baseURL: "./api2"
+});
+
+Vue.prototype.$http = http;
+Vue.prototype.$http2 = http2;
 Vue.prototype.$Bus = new Vue();
 
 Vue.config.productionTip = false;
