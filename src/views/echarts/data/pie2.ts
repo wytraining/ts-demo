@@ -1,4 +1,29 @@
 // 圆环：并排图例
+
+const data: Array<any> = [
+    {
+        value: 335, name: '双随机抽查',
+        percent: '17%',
+        itemStyle: {
+            color: "#62b8ff"
+        }
+    },
+    {
+        value: 310, name: '日常巡查检查',
+        percent: '15%',
+        itemStyle: {
+            color: "#00b8c3"
+        }
+    },
+    {
+        value: 234, name: '交叉检查',
+        percent: '14%',
+        itemStyle: {
+            color: "#ffbd43"
+        }
+    }
+];
+
 export const pieOptions2 = {
     title: {
         text: "圆环：并排图例"
@@ -43,14 +68,11 @@ export const pieOptions2 = {
                 }
             }
         },
-        formatter:  function(name: any){
-            if(name != '统计') {
-                let val1 = name.split("@")[0];
-                let val2 = name.split("@")[1] + '家';
-                let val3 = name.split("@")[2];
-                return '{a|'+ val1 + '}' + '{b|'+ val2 + '}' + '{c|'+ val3 + '}'
-            }
+        formatter: (name: string) => {
+            let {percent, value} = data.find(item => item.name === name);
+            return '{a|' + name + '}' + '{b|' + value + '}' + '{c|' + percent + '}'
         }
+
     },
     series: [
         {
@@ -73,32 +95,7 @@ export const pieOptions2 = {
             labelLine: {
                 show: false
             },
-            data: [
-                {
-                    value: 335, name: '双随机抽查@335@17%',
-                    itemStyle: {
-                        color: "#62b8ff"
-                    }
-                },
-                {
-                    value: 310, name: '日常巡查检查@310@15%',
-                    itemStyle: {
-                        color: "#00b8c3"
-                    }
-                },
-                {
-                    value: 234, name: '交叉检查@234@15%',
-                    itemStyle: {
-                        color: "#ffbd43"
-                    }
-                },
-                {
-                    value: 199, name: '专项行动@199@15%',
-                    itemStyle: {
-                        color: "#fe9167"
-                    }
-                },
-            ]
+            data: data
         }
     ]
 
