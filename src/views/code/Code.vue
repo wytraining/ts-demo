@@ -13,6 +13,7 @@
                 <MenuItem name="drag" to="/main/code/drag">拖拽</MenuItem>
                 <MenuItem name="promise" to="/main/code/promise">promise</MenuItem>
                 <MenuItem name="language" to="/main/code/language">language</MenuItem>
+                <MenuItem name="changeColor" to="/main/code/changeColor">一键换肤</MenuItem>
                 <MenuItem name="routerJupm" to="/main/code/routerJupm">路由跳转</MenuItem>
                 <MenuItem name="exportWord" to="/main/code/exportWord">导出word</MenuItem>
                 <MenuItem name="classDemo" to="/main/code/classDemo">class</MenuItem>

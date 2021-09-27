@@ -14,6 +14,19 @@ function resolve(dir) {
 module.exports = {
     // lintOnSave: true,
     publicPath: "./",
+    css: {
+        loaderOptions: {
+            sass: {
+                // sass-loader 版本不同，loaderOptions 中的 additionalData 的键名也不同
+                data: `
+                    @import "@/styles/variables.scss";
+                    @import "@/styles/theme.scss";
+                `// v8-
+                // prependData: '@import "@/styles/variables.scss"'  //v8
+                // additionalData: '@import "@/styles/variables.scss"'   //v10+
+            }
+        }
+    },
     transpileDependencies: [
         'vue-echarts',
         'resize-detector',

@@ -1,0 +1,61 @@
+//浅色主题
+$light-theme: (
+        base-color: #000,
+        background-color: #ccc
+);
+
+//深色主题
+$dark-theme: (
+        base-color: #fff,
+        background-color: #000
+);
+
+//定义映射集合
+$themes: (
+        light-theme: $light-theme,
+        dark-theme: $dark-theme,
+);
+
+//字体颜色
+@mixin base-color() {
+  @each $theme-name, $theme in $themes {
+    [data-theme = '#{$theme-name}'] & {
+      color: map-get($map: $theme, $key: base-color);
+    }
+  }
+}
+
+//背景色
+@mixin base-background() {
+  @each $theme-name, $theme in $themes {
+    [data-theme = '#{$theme-name}'] & {
+      background: map-get($map: $theme, $key: background-color);
+    }
+  }
+}
+
+// 获取背景色下的变量颜色值
+@function get-color-variable($variable-name) {
+  @return map-get($theme, $variable-name);
+}
+
+// 给当前主题色配置颜色变量
+@mixin set-theme($with-class: false) {
+  @each $theme-name, $theme in $themes {
+    // !global 把局部变量强升为全局变量
+    // 供get-color-variable函数中：map-get里 key 的使用
+    $theme: $theme !global;
+
+    //@if $with-class {
+    //  &.#{$theme-name},
+    //  .#{$theme-name} &{
+    //    @content;
+    //  }
+    //}
+
+    [data-theme = '#{$theme-name}'] & {
+      @content;
+    }
+  }
+}
+

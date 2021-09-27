@@ -61,6 +61,13 @@ export default {
                     component: () => import('@/views/code/pages/Language.vue'),
                 },
                 {
+                    path: 'changeColor',
+                    meta: {
+                        name: 'changeColor'
+                    },
+                    component: () => import('@/views/code/pages/ChangeColor.vue'),
+                },
+                {
                     path: 'routerJupm',
                     meta: {
                         name: 'routerJupm'
