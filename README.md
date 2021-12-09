@@ -21,10 +21,17 @@ npm run build
 * node-sass 可以使用/deep/ sass或dart-sass可以使用 ::v-deep
 
 
-####   vue-seamless-scroll
+#### 插件
+#1.自动滚动   vue-seamless-scroll
 安装：npm install vue-seamless-scroll --save
 
 
-#####   vue-quill-editor
+#2.水球图 vue-quill-editor
 1.安装：  npm install vue-quill-editor --save
          npm install quill --save
+
+#3.词云   echarts-wordcloud
+安装          npm install echarts-wordcloud@1.1.3 -S
+引入          import 'echarts-wordcloud'
+注意版本问题：  echarts 4.x 对应  echarts-wordcloud  1.x版本
+             echarts 5.x 对应  echarts-wordcloud  2.x版本
