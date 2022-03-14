@@ -109,6 +109,13 @@ export default {
                     },
                     component: () => import('@/views/code/vuePages/Bus/BusDemo.vue')
                 },
+                {
+                    path: 'computed',
+                    meta: {
+                        name: 'computed'
+                    },
+                    component: () => import('@/views/code/vuePages/Computed.vue')
+                },
 
 
 
