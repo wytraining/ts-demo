@@ -17,3 +17,8 @@
   background: #bbb;
   cursor: pointer;
 }
+
+// 横纵滚动条交叉处的颜色
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
